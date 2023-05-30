@@ -9,5 +9,6 @@ export default interface User {
     description : string,
     url : string
     isLike? : boolean
+    gender : boolean
     myActivity : Map<string,Activity>
 }

@@ -13,15 +13,15 @@ class UserController {
     }
 
     getAllUncheckUser(){
-        return UserRepository.getAllUser().map(e => e.isLike === null)
+        return UserRepository.getAllUser().find(e => e.isLike === null)
     }
 
     getAllLikeUser(){
-        return UserRepository.getAllUser().map(e => e.isLike === true)
+        return UserRepository.getAllUser().find(e => e.isLike === true)
     }
 
-    getAllUnlikeUser(){
-        return UserRepository.getAllUser().map(e => e.isLike === false)
+    getAllUnlikeUser() {
+        return  UserRepository.getAllUser().find(e => e.isLike === false)
     }
 
     getUserById(userId : string){
