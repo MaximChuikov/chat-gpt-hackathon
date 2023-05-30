@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../components/Card/App.css'
-import Advanced from "../../components/Card/examples/Advanced";
+import Users from "@Components/Card/examples/Users";
 import styles from './card.module.scss'
 import Header from "@Components/Header/Header";
 import {Heart} from 'react-feather';
@@ -13,7 +13,7 @@ const MatchPage = () => {
                 <Heart className={styles.heartImg}/>
             </div>
             <div className={styles.cardContainer}>
-                <Advanced/>
+                <Users/>
             </div>
         </>
 

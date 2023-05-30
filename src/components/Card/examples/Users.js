@@ -1,11 +1,7 @@
 import React, { useState, useMemo, useRef } from 'react'
 import TinderCard from 'react-tinder-card'
-import Heart from "@Components/Card/svgs/Heart";
-import Find from "@Components/Card/svgs/Find";
 
 import UserController from "../../../backend/controller/UserController";
-import UserRepository from "../../../backend/repository/UserRepository";
-import ActivityController from "../../../backend/controller/ActivityController";
 
 const users = UserController.getAllUncheckUser()
 
@@ -32,7 +28,7 @@ const db = [
   }
 ]
 
-function Advanced () {
+function Users () {
   const [currentIndex, setCurrentIndex] = useState(db.length - 1)
   const [lastDirection, setLastDirection] = useState()
   // used for outOfFrame closure
@@ -128,4 +124,4 @@ function Advanced () {
   )
 }
 
-export default Advanced
+export default Users
