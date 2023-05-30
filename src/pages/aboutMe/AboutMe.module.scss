@@ -1,0 +1,34 @@
+.aboutMe {
+  width: 100%;
+  height: 100vh;
+
+  .card {
+    background: #696eff;
+  }
+
+  .states {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .point {
+      margin: 0 12px;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background: lightgray;
+    }
+    .selectPoint:after{
+      border-radius: 50%;
+      margin: 5px;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: black;
+    }
+  }
+}
