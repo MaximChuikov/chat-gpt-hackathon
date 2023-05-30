@@ -14,6 +14,7 @@ const App = () => {
             <Route element={<Footer/>}>
                 <Route path="/" element={<MatchPage/>}/>
                 <Route path="/events" element={<NewEvent/>}/>
+                <Route path="personalPage" element={<PersonalPage/>}/>
                 <Route path="/memes" element={<div className={styles.appBody}>error</div>}/>
                 <Route path="/profile" element={<PersonalPage/>}/>
                 <Route path="*" element={<div className={styles.appBody}>error</div>}/>
