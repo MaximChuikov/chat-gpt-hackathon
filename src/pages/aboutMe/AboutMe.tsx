@@ -28,8 +28,8 @@ const AboutMe = () => {
             name: name,
             contact: "suck",
             mail: "помогите",
+            url : "/image/nad9.jpg",
             description: interests,
-            subscriptions: new Map(),
             myActivity: new Map()
         })
     }, [name, gender, interests]);
