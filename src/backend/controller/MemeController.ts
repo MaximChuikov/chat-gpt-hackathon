@@ -1,7 +1,5 @@
 import MemeRepository from "../repository/MemeRepository";
 import Meme from "../models/Meme";
-import Activity from "../models/Activity";
-import ActivityRepository from "../repository/ActivityRepository";
 
 class MemeController {
     createMeme(meme : Meme){

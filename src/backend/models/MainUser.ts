@@ -1,6 +1,6 @@
 import Meme from "./Meme";
 
-interface MainUser {
+export default interface MainUser {
     name : string
     description : string
     memes : Array<Meme>
