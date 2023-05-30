@@ -8,10 +8,4 @@ export default interface MainUser {
     avatar : string
 }
 
-export let mainUser : MainUser = {
-    name : "Надежда",
-    description : "Хочу уйти из команды спермобаков",
-    memes : new Array<Meme>(),
-    urls : new Array<string>(),
-    avatar : "Аватарка в виде котика"
-}
+export let mainUser : MainUser

@@ -1,5 +1,7 @@
 import User from "../models/User";
 import UserRepository from "../repository/UserRepository";
+import MainUser, {mainUser} from "../models/MainUser";
+import Meme from "../models/Meme";
 
 class UserController {
 
@@ -28,6 +30,13 @@ class UserController {
         return UserRepository.getUser(userId)
     }
 
+    createMainUser(mainUser : MainUser) : MainUser{
+        return UserRepository.createMainUser(mainUser)
+    }
+
+    getMainUser() : MainUser{
+        return UserRepository.getMainUser()
+    }
 }
 
 export default new UserController()
