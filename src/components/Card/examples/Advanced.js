@@ -3,6 +3,12 @@ import TinderCard from 'react-tinder-card'
 import Heart from "@Components/Card/svgs/Heart";
 import Find from "@Components/Card/svgs/Find";
 
+import UserController from "../../../backend/controller/UserController";
+import UserRepository from "../../../backend/repository/UserRepository";
+import ActivityController from "../../../backend/controller/ActivityController";
+
+const users = UserController.getAllUncheckUser()
+
 const db = [
   {
     name: 'Richard Hendricks',
@@ -45,14 +51,19 @@ function Advanced () {
     currentIndexRef.current = val
   }
 
-  const canGoBack = currentIndex < db.length - 1
-
-  const canSwipe = currentIndex >= 0
-
   // set last direction and decrease current index
   const swiped = (direction, nameToDelete, index) => {
     setLastDirection(direction)
     updateCurrentIndex(index - 1)
+    console.log(direction)
+    if (direction === 'right') {
+      console.log(db[index], "вправо")
+      UserController.switchUser(users[index], true)
+    }
+    else {
+      console.log(db[index], "влево")
+      UserController.switchUser(users[index], false)
+    }
   }
 
   const outOfFrame = (name, idx) => {
@@ -62,20 +73,7 @@ function Advanced () {
     // TODO: when quickly swipe and restore multiple times the same card,
     // it happens multiple outOfFrame events are queued and the card disappear
     // during latest swipes. Only the last outOfFrame event should be considered valid
-  }
 
-  const swipe = async (dir) => {
-    if (canSwipe && currentIndex < db.length) {
-      await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
-    }
-  }
-
-  // increase current index and show card
-  const goBack = async () => {
-    if (!canGoBack) return
-    const newIndex = currentIndex + 1
-    updateCurrentIndex(newIndex)
-    await childRefs[newIndex].current.restoreCard()
   }
 
   return (
@@ -89,6 +87,26 @@ function Advanced () {
         rel='stylesheet'
       />
       <div className='cardContainer'>
+
+        {
+          users.map((u, idx) => (
+              <TinderCard
+                  ref={childRefs[index]}
+                  className='swipe'
+                  key={idx}
+                  onSwipe={(dir) => swiped(dir, u.name, idx)}
+                  onCardLeftScreen={() => outOfFrame(u.name, idx)}
+              >
+                <div
+                    style={{ backgroundImage: 'url(' + u.url + ')' }}
+                    className='card'
+                >
+                  <h3>{u.name}</h3>
+                </div>
+              </TinderCard>
+          ))
+        }
+
         {db.map((character, index) => (
           <TinderCard
             ref={childRefs[index]}
