@@ -4,17 +4,17 @@ import User from "../models/User";
 
 class ActivityController {
 
-    createActivitу(activity : Activity) {
+    createActivity(activity : Activity) {
         return  ActivityRepository.saveActivity(activity)
     }
 
-    compliteActivitу(activityId : string) {
+    completeActivity(activityId : string) {
         let activity = ActivityRepository.getActivity(activityId)
         activity.isActive = false
         return ActivityRepository.saveActivity(activity)
     }
 
-    userAddDeleteInActivity(activityId : string, userAdd : User){
+    addAndDeleteUserInActivity(activityId : string, userAdd : User){
         let activity = ActivityRepository.getActivity(activityId)
         // @ts-ignore
         if(activity.users[userAdd.id]){
@@ -22,11 +22,32 @@ class ActivityController {
         }
         else{
             // @ts-ignore
-            activity.uisers[userAdd.id]= userAdd
+            activity.users[userAdd.id]= userAdd
         }
-
         return ActivityRepository.saveActivity(activity)
     }
+
+    switchActivity(activity : Activity, check : boolean){
+        activity.isLike = check
+        return ActivityRepository.saveActivity(activity)
+    }
+
+    getAllUncheckActivity(){
+        return ActivityRepository.getAllActivity().map(e => e.isLike === null)
+    }
+
+    getAllLikeActivity(){
+        return ActivityRepository.getAllActivity().map(e => e.isLike === true)
+    }
+
+    getAllUnlikeActivity(){
+        return ActivityRepository.getAllActivity().map(e => e.isLike === false)
+    }
+
+    getActivityById(activityId : string){
+        return ActivityRepository.getActivity(activityId)
+    }
+
 
 }
 

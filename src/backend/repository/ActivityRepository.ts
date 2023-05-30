@@ -1,5 +1,6 @@
 import Activity from "../models/Activity";
 import StorageRep from "./StorageRep";
+import MessageHelper from "../models/MessageHelper";
 
 class ActivityRepository {
 
@@ -13,6 +14,11 @@ class ActivityRepository {
         const activities = StorageRep.getStorage<Activity>("activity") as Map<string,Activity>
         // @ts-ignore
         return activities[activityId]
+    }
+
+    getAllActivity() : Array<Activity>{
+        let map : Map<string,Activity> = new Map(Object.entries(JSON.parse(localStorage.getItem("activity") || "{}")));
+        return Array.from(map, ([key,value]) => (value ));
     }
 }
 export default new ActivityRepository()
