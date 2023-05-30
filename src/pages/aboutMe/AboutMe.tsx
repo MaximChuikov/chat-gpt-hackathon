@@ -9,23 +9,41 @@ const AboutMe = () => {
     const [gender, setGender] = useState("");
     const [interests, setInterests] = useState("");
 
+    const changeState = (state: number) => {
+        if(curState === 1){
+            if(name.length > 0){
+                setCurState(state);
+            }else{
+
+            }
+        }
+    }
     const getPoint = (state: number) => {
         const onPointClick = useCallback(() => {
-            setCurState(state)
+            changeState(state)
         }, [])
         return (
             <div className={styles.point + " " + (state === curState && styles.selectPoint)} onClick={onPointClick}/>
         )
     }
+    const getFirstCard = () => {
+        return (<div className={styles.cardInfo}>
+            <span className={styles.cardTitle}>Познакомимся? 👋</span>
+            <label htmlFor="userName" className={styles.inputLabel}>Введите ваше имя</label>
+            <input
+                type={"text"}
+                className={styles.nameFiled}
+                name="userName"
+                placeholder={"Имя Фамилия"}
+            />
+            <button className={styles.nextBtn}>Далее →</button>
+        </div>)
+    }
     return (
         <div className={styles.aboutMe}>
             <Header text={"Начальная анкета"}/>
             <div className={styles.card}>
-                <div className={styles.cardInfo}>
-                    <span>Познакомимся?</span>
-                    <span>Введите ваше имя</span>
-                    <input type={"text"} value={name}/>
-                </div>
+                {getFirstCard()}
             </div>
             <div className={styles.states}>
                 {

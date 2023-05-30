@@ -11,12 +11,63 @@
     max-height: calc(100% - 172px);
     padding: 32px 16px;
     overflow: hidden;
-    .cardInfo{
+
+    .cardInfo {
+      position: relative;
+      color: white;
+      font-family: Inter, sans-serif;
+      display: flex;
+      flex-direction: column;
       box-sizing: border-box;
       border-radius: 12px;
       width: 100%;
       background: #696eff;
       height: 100%;
+      padding: 16px;
+
+      .cardTitle {
+        margin-top: 16px;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+      }
+
+      .inputLabel {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 64px;
+        font-weight: 400;
+      }
+
+      .nameFiled {
+        border: none;
+        outline: 2px solid #1E1E1E;
+        font-family: 'Montserrat', sans-serif;
+        background: #EAEAEA;
+        box-sizing: border-box;
+        margin-top: 8px;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        border-radius: 8px;
+        padding: 16px 8px;
+        color: #000000;
+      }
+
+      .nextBtn {
+        margin-top: 8px;
+        box-sizing: border-box;
+        background: transparent;
+        color: white;
+        font-size: 18px;
+        border: none;
+        padding: 16px 24px;
+        border-radius: 10px;
+        align-self: end;
+        display: flex;
+      }
     }
   }
 
@@ -35,7 +86,8 @@
       height: 30px;
       background: lightgray;
     }
-    .selectPoint:after{
+
+    .selectPoint:after {
       border-radius: 50%;
       margin: 5px;
       content: "";
