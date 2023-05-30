@@ -26,16 +26,14 @@ const AboutMe = () => {
     }
     const submit = useCallback(() => {
         const user = {
-            id: "228",
             name: name,
-            contact: "suck",
-            mail: "помогите",
-            url: "/image/nad9.jpg",
             description: interests,
-            gender: gender,
-            myActivity: new Map()
+            memes: [],
+            urls: [],
+            avatar: "/image/nad9.jpg",
         }
-        UserController.createUser(user);
+
+        UserController.createMainUser(user);
         navigator("/");
     }, [name, gender, interests]);
     const changeState = useCallback((state: number) => {

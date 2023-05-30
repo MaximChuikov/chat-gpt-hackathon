@@ -1,13 +1,23 @@
-import React from 'react';
-import {Route, Routes} from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {Route, Routes, useNavigate} from 'react-router-dom';
 import styles from './App.module.scss';
 import NewEvent from "@Pages/NewEvent/NewEvent";
 import MatchPage from "@Pages/MatchPage/MatchPage";
 import Footer from "@Components/Footer/Footer";
 import AboutMe from "@Pages/aboutMe/AboutMe";
 import PersonalPage from "@Pages/personalPage/PersonalPage";
+import UserController from "./backend/controller/UserController";
 
 const App = () => {
+    const nav = useNavigate();
+    useEffect(() => {
+        const user = UserController.getMainUser();
+        if (user.name) {
+            console.log(true)
+        } else {
+            nav("/aboutMe");
+        }
+    }, [])
     return (
         <Routes>
             <Route path="/aboutMe" element={<AboutMe/>}/>
