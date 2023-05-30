@@ -40,6 +40,48 @@
         font-weight: 400;
       }
 
+      .genderFiled {
+        margin-top: 24px;
+        display: flex;
+        .radioItem{
+          display: flex;
+          align-items: center;
+          label{
+            margin-left: 8px;
+            font-size: 16px;
+            font-weight: 400;
+          }
+          input[type='radio']:after {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: -6px;
+            left: -8px;
+            position: relative;
+            background-color: #d1d3d1;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+          }
+
+          input[type='radio']:checked:after {
+            background-color: #000000;
+          }
+          .male{
+            margin-left: 12px;
+          }
+          .female {
+            margin-left: 36px;
+          }
+        }
+
+      }
+      .interestFiled{
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 80px;
+      }
       .nameFiled {
         border: none;
         outline: 2px solid #1E1E1E;
@@ -56,8 +98,13 @@
         color: #000000;
       }
 
+      .navigateBtns{
+        display: flex;
+        width: 100%;
+        margin-top: 16px;
+        justify-content: space-between;
+      }
       .nextBtn {
-        margin-top: 8px;
         box-sizing: border-box;
         background: transparent;
         color: white;
@@ -65,8 +112,10 @@
         border: none;
         padding: 16px 24px;
         border-radius: 10px;
-        align-self: end;
         display: flex;
+      }
+      .nextBtnEnd{
+        align-self: end;
       }
     }
   }
