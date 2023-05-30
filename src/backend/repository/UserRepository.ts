@@ -2,6 +2,7 @@ import User from "../models/User";
 import StorageRep from "./StorageRep";
 import Activity from "../models/Activity";
 import Meme from "../models/Meme";
+import MainUser from "../models/MainUser";
 
 class UserRepository {
 
@@ -22,6 +23,14 @@ class UserRepository {
         return map[userId]
     }
 
+    createMainUser(mainUser : MainUser) : MainUser{
+        localStorage.setItem("mainUser",JSON.stringify(mainUser))
+        return JSON.parse(localStorage.getItem("mainUser") || "{}") as MainUser
+    }
+
+    getMainUser(){
+        return JSON.parse(localStorage.getItem("mainUser") || "{}") as MainUser
+    }
 }
 
 export default new UserRepository()
