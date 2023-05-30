@@ -27,10 +27,15 @@ class ActivityController {
         return ActivityRepository.saveActivity(activity)
     }
 
-    LikeActivity(activity : Activity, user : User){
-        user
-
+    switchActivity(activity : Activity, check : boolean){
+        activity.isLike = check
+        return ActivityRepository.saveActivity(activity)
     }
+
+    getAllUncheckActivity(){
+        return ActivityRepository.getAllActivity().map(e => e.isLike === null)
+    }
+
 
 }
 
