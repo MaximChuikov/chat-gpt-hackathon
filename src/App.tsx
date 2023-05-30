@@ -9,11 +9,11 @@ import AboutMe from "@Pages/aboutMe/AboutMe";
 const App = () => {
     return (
         <Routes>
+            <Route path="/aboutMe" element={<AboutMe/>}/>
             <Route element={<Footer/>}>
                 <Route path="*" element={<div className={styles.appBody}>error</div>}/>
                 <Route path="/event" element={<NewEvent/>}/>
                 <Route path="/" element={<MatchPage/>}/>
-                <Route path="/aboutMe" element={<AboutMe/>}/>
             </Route>
         </Routes>
     );

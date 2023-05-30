@@ -23,7 +23,15 @@ const AboutMe = () => {
         }
     }
     const submit = useCallback(() => {
-
+        UserController.createUser({
+            id: "228",
+            name: name,
+            contact: "suck",
+            mail: "помогите",
+            description: interests,
+            subscriptions: new Map(),
+            myActivity: new Map()
+        })
     }, [name, gender, interests]);
     const changeState = useCallback((state: number) => {
         if (curState === 1) {
@@ -138,8 +146,7 @@ const AboutMe = () => {
                 <button className={styles.nextBtn} onClick={() => changeState(2)}>← Назад</button>
                 <button
                     className={styles.nextBtn}
-                    onClick={() => {
-                    }}>
+                    onClick={submit}>
                     Продолжить
                 </button>
             </div>
