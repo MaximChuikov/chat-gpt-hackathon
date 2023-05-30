@@ -14,7 +14,7 @@ class ActivityController {
         return ActivityRepository.saveActivity(activity)
     }
 
-    userAddDeleteInActivity(activityId : string, userAdd : User){
+    addAndDeleteUserInActivity(activityId : string, userAdd : User){
         let activity = ActivityRepository.getActivity(activityId)
         // @ts-ignore
         if(activity.users[userAdd.id]){
@@ -24,8 +24,12 @@ class ActivityController {
             // @ts-ignore
             activity.uisers[userAdd.id]= userAdd
         }
-
         return ActivityRepository.saveActivity(activity)
+    }
+
+    LikeActivity(activity : Activity, user : User){
+        user
+
     }
 
 }
