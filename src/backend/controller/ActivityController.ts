@@ -4,11 +4,11 @@ import User from "../models/User";
 
 class ActivityController {
 
-    createActivitу(activity : Activity) {
+    createActivity(activity : Activity) {
         return  ActivityRepository.saveActivity(activity)
     }
 
-    compliteActivitу(activityId : string) {
+    completeActivity(activityId : string) {
         let activity = ActivityRepository.getActivity(activityId)
         activity.isActive = false
         return ActivityRepository.saveActivity(activity)
@@ -22,7 +22,7 @@ class ActivityController {
         }
         else{
             // @ts-ignore
-            activity.uisers[userAdd.id]= userAdd
+            activity.users[userAdd.id]= userAdd
         }
         return ActivityRepository.saveActivity(activity)
     }
@@ -34,6 +34,18 @@ class ActivityController {
 
     getAllUncheckActivity(){
         return ActivityRepository.getAllActivity().map(e => e.isLike === null)
+    }
+
+    getAllLikeActivity(){
+        return ActivityRepository.getAllActivity().map(e => e.isLike === true)
+    }
+
+    getAllUnlikeActivity(){
+        return ActivityRepository.getAllActivity().map(e => e.isLike === false)
+    }
+
+    getActivityById(activityId : string){
+        return ActivityRepository.getActivity(activityId)
     }
 
 

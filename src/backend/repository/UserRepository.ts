@@ -16,6 +16,12 @@ class UserRepository {
         return Array.from(map, ([key,value]) => (value ));
     }
 
+    getUser(userId : string) {
+        let map : Map<string,User> = new Map(Object.entries(JSON.parse(localStorage.getItem("user") || "{}")));
+        // @ts-ignore
+        return map[userId]
+    }
+
 }
 
 export default new UserRepository()

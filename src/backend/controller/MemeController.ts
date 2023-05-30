@@ -15,5 +15,13 @@ class MemeController {
     getAllUncheckMeme(){
         return MemeRepository.getAllMeme().map(e => e.isLike === null)
     }
+
+    getAllLikeMeme(){
+        return MemeRepository.getAllMeme().map(e=>e.isLike === true)
+    }
+
+    getAllUnlikeMeme(){
+        return MemeRepository.getAllMeme().map(e=>e.isLike === false)
+    }
 }
 export default new MemeController()

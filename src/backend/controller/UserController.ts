@@ -1,7 +1,5 @@
 import User from "../models/User";
 import UserRepository from "../repository/UserRepository";
-import Activity from "../models/Activity";
-import ActivityRepository from "../repository/ActivityRepository";
 
 class UserController {
 
@@ -9,13 +7,25 @@ class UserController {
         return UserRepository.saveUser(user)
     }
 
-    getAllUncheckUSer(){
-        return UserRepository.getAllUser().map(e => e.isLike === null)
-    }
-
     switchUser(user : User, check : boolean){
         user.isLike = check
         return UserRepository.saveUser(user)
+    }
+
+    getAllUncheckUser(){
+        return UserRepository.getAllUser().map(e => e.isLike === null)
+    }
+
+    getAllLikeUser(){
+        return UserRepository.getAllUser().map(e => e.isLike === true)
+    }
+
+    getAllUnlikeUser(){
+        return UserRepository.getAllUser().map(e => e.isLike === false)
+    }
+
+    getUserById(userId : string){
+        return UserRepository.getUser(userId)
     }
 
 }
