@@ -33,15 +33,15 @@ class ActivityController {
     }
 
     getAllUncheckActivity(){
-        return ActivityRepository.getAllActivity().map(e => e.isLike === null)
+        return ActivityRepository.getAllActivity().filter(e => e.isLike === null)
     }
 
     getAllLikeActivity(){
-        return ActivityRepository.getAllActivity().map(e => e.isLike === true)
+        return ActivityRepository.getAllActivity().filter(e => e.isLike === true)
     }
 
     getAllUnlikeActivity(){
-        return ActivityRepository.getAllActivity().map(e => e.isLike === false)
+        return ActivityRepository.getAllActivity().filter(e => e.isLike === false)
     }
 
     getActivityById(activityId : string){
