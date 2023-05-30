@@ -5,6 +5,7 @@ import NewEvent from "@Pages/NewEvent/NewEvent";
 import MatchPage from "@Pages/MatchPage/MatchPage";
 import Footer from "@Components/Footer/Footer";
 import AboutMe from "@Pages/aboutMe/AboutMe";
+import PersonalPage from "@Pages/personalPage/PersonalPage";
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/event" element={<NewEvent/>}/>
                 <Route path="/" element={<MatchPage/>}/>
                 <Route path="/aboutMe" element={<AboutMe/>}/>
+                <Route path="/personPage" element={<PersonalPage/>}/>
             </Route>
         </Routes>
     );
