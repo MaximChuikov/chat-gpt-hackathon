@@ -23,10 +23,7 @@ const AboutMe = () => {
         }
     }
     const submit = useCallback(() => {
-        UserController.createUser({
-            name: name
 
-        })
     }, [name, gender, interests]);
     const changeState = useCallback((state: number) => {
         if (curState === 1) {
