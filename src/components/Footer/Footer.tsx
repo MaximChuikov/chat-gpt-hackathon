@@ -1,29 +1,26 @@
 import React from 'react';
-import Heart from "@Components/Card/svgs/Heart";
 import styles from './foot.module.scss'
 import {Outlet, useNavigate} from 'react-router-dom'
-import User from "@Components/Card/svgs/User";
-import Find from "@Components/Card/svgs/Find";
-import Frog from "@Components/Card/svgs/Frog";
+import {Award, Search, Smile, User} from 'react-feather';
 
 const Footer = () => {
     const nav = useNavigate()
 
     return (
         <>
-            <Outlet />
+            <Outlet/>
             <div className={styles.footer}>
                 <div onClick={() => nav('/')}>
-                    <Find />
+                    <Search/>
                 </div>
-                <div onClick={() => nav('aboutMe')}>
-                    <User />
-                </div>
-                <div onClick={() => nav('likes')}>
-                    <Heart />
+                <div onClick={() => nav('/events')}>
+                    <Award/>
                 </div>
                 <div onClick={() => nav('/memes')}>
-                    <Frog />
+                    <Smile/>
+                </div>
+                <div onClick={() => nav('/profile')}>
+                    <User/>
                 </div>
             </div>
         </>
