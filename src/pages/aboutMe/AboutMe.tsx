@@ -8,7 +8,7 @@ const AboutMe = () => {
     const states = [1, 2, 3];
     const navigator = useNavigate();
     const [isError, setIsError] = useState(false)
-    const [curState, setCurState] = useState(3);
+    const [curState, setCurState] = useState(1);
     const [name, setName] = useState("");
     const [gender, setGender] = useState<boolean>(true);
     const [interests, setInterests] = useState("");
@@ -25,7 +25,7 @@ const AboutMe = () => {
         }
     }
     const submit = useCallback(() => {
-        UserController.createUser({
+        const user = {
             id: "228",
             name: name,
             contact: "suck",
@@ -34,7 +34,8 @@ const AboutMe = () => {
             description: interests,
             gender: gender,
             myActivity: new Map()
-        })
+        }
+        UserController.createUser(user);
         navigator("/");
     }, [name, gender, interests]);
     const changeState = useCallback((state: number) => {
