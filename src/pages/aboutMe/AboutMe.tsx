@@ -2,9 +2,11 @@ import React, {useCallback, useState} from "react";
 import styles from "./AboutMe.module.scss";
 import Header from "@Components/Header/Header";
 import UserController from "../../backend/controller/UserController";
+import {useNavigate} from "react-router-dom";
 
 const AboutMe = () => {
     const states = [1, 2, 3];
+    const navigator = useNavigate();
     const [isError, setIsError] = useState(false)
     const [curState, setCurState] = useState(3);
     const [name, setName] = useState("");
@@ -28,10 +30,12 @@ const AboutMe = () => {
             name: name,
             contact: "suck",
             mail: "помогите",
-            url : "/image/nad9.jpg",
+            url: "/image/nad9.jpg",
             description: interests,
+            gender: gender,
             myActivity: new Map()
         })
+        navigator("/");
     }, [name, gender, interests]);
     const changeState = useCallback((state: number) => {
         if (curState === 1) {
