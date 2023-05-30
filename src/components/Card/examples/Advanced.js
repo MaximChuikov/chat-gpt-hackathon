@@ -1,5 +1,7 @@
 import React, { useState, useMemo, useRef } from 'react'
 import TinderCard from 'react-tinder-card'
+import Heart from "@Components/Card/svgs/Heart";
+import Find from "@Components/Card/svgs/Find";
 
 const db = [
   {
@@ -86,7 +88,6 @@ function Advanced () {
         href='https://fonts.googleapis.com/css?family=Alatsi&display=swap'
         rel='stylesheet'
       />
-      <h1>React Tinder Card</h1>
       <div className='cardContainer'>
         {db.map((character, index) => (
           <TinderCard
@@ -105,20 +106,6 @@ function Advanced () {
           </TinderCard>
         ))}
       </div>
-      <div className='buttons'>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
-        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
-      </div>
-      {lastDirection ? (
-        <h2 key={lastDirection} className='infoText'>
-          You swiped {lastDirection}
-        </h2>
-      ) : (
-        <h2 className='infoText'>
-          Swipe a card or press a button to get Restore Card button visible!
-        </h2>
-      )}
     </div>
   )
 }

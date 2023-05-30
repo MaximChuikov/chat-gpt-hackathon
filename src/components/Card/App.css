@@ -77,13 +77,29 @@ h2 {
 .buttons {
   margin: 20px;
   display: flex;
-  flex-wrap: wrap;
+}
+
+.buttons svg {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #652c90;
+}
+
+.buttons>svg:nth-child(1) {
+  fill: #e52e71;
+  background-color: #9198e5;
+}
+.buttons>svg:nth-child(2) {
+  fill: red;
+  background-color: rebeccapurple;
 }
 
 @media (max-width: 625px) {
-  .buttons {
-    flex-direction: column;
-  }
+  /*.buttons {*/
+  /*  flex-direction: column;*/
+  /*}*/
 }
 
 .buttons button {
