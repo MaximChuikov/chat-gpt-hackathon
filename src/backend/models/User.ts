@@ -7,7 +7,8 @@ export default interface User {
     contact : string,
     mail : string,
     description : string,
-    url : string
-    isLike? : boolean
+    faculty? : string,
+    group? : string,
+    subscriptions: Map<string,Activity>
     myActivity : Map<string,Activity>
 }

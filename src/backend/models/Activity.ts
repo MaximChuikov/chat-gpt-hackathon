@@ -3,10 +3,8 @@ import User from "./User";
 export default interface Activity {
     id: string
     title : string
-    organizers : User
-    description : string
-    isActive : boolean
-    isLike? : boolean
+    organizers : Array<User>
+    isActive : Boolean
     users : Map<string,User>
 }
 

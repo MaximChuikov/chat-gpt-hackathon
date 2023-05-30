@@ -11,7 +11,7 @@ class HelperMessageController {
     }
     getAllActiveHelpers(){
         const allHelpers = this.getAllHelpers() as Array<MessageHelper>
-        return allHelpers.map(e => !e.isComplete)
+        return allHelpers.map(e => !e.isComplite)
     }
 }
 

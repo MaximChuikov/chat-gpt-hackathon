@@ -16,8 +16,8 @@ class ActivityRepository {
         return activities[activityId]
     }
 
-    getAllActivity() {
-        let map : Map<string,MessageHelper> = new Map(Object.entries(JSON.parse(localStorage.getItem("activity") || "{}")));
+    getAllActivity() : Array<Activity>{
+        let map : Map<string,Activity> = new Map(Object.entries(JSON.parse(localStorage.getItem("activity") || "{}")));
         return Array.from(map, ([key,value]) => (value ));
     }
 }
