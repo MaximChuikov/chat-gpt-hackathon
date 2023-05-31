@@ -26,11 +26,14 @@ class MemeController {
     }
 
     constructor() {
-        for (let i = 0;  i < memeMock.length; i++){
-            let t =this.createMeme(memeMock[i])
-            console.log(t)
-        }
+        if(check)
+            for (let i = 0;  i < memeMock.length; i++){
+                let t =this.createMeme(memeMock[i])
+                check = false
+            }
     }
 
 }
+let check = true
+
 export default new MemeController()

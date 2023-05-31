@@ -41,12 +41,16 @@ class UserController {
     getMainUser() : MainUser{
         return UserRepository.getMainUser()
     }
+
     constructor() {
+        if(check)
         for (let i = 0;  i < usersMock.length; i++){
             let t =this.createUser(usersMock[i])
-            console.log(t)
+            check = false
         }
     }
+
 }
+let check = true
 
 export default new UserController()

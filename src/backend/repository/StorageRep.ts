@@ -11,6 +11,7 @@ class StorageRep {
     }
 
     saveStorage<T>(name : string, storage : T) {
+
         localStorage.setItem(name.toString(),JSON.stringify(storage))
         return JSON.parse(localStorage.getItem(name.toString()) || "{}") as Map<string,T>
     }

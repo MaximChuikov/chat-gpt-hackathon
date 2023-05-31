@@ -33,7 +33,7 @@ class ActivityController {
     }
 
     getAllUncheckActivity(){
-        return ActivityRepository.getAllActivity().filter(e => e.isLike == null)
+        return ActivityRepository.getAllActivity().filter(e => e.isLike === null)
     }
 
     getAllLikeActivity(){
@@ -50,5 +50,6 @@ class ActivityController {
 
 
 }
+let check = true
 
 export default new ActivityController()
