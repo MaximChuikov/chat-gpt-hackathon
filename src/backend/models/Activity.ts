@@ -6,6 +6,7 @@ export default interface Activity {
     organizers? : User
     description : string
     isActive : boolean
+    url : string
     isLike? : boolean
     users? : Map<string,User>
 }

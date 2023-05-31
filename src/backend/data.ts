@@ -118,55 +118,49 @@ export const activityMock : Array<Activity> = [
             "title": "Charity Run for Children",
             "description": "A charity run to raise funds for children in need.",
             "isActive": false,
+            url: "./img/1.jpg"
         },
         {
             "id": "2",
             "title": "Yoga in the Park",
             "description": "A relaxing yoga session in the park.",
             "isActive": false,
+            url: "./img/2.jpg"
         },
         {
             "id": "3",
             "title": "Art Exhibition Opening",
             "description": "An art exhibition opening featuring works by local artists.",
             "isActive": false,
+            url: "./img/3.jpg"
         },
         {
             "id": "4",
             "title": "Music Festival",
             "description": "A music festival featuring local and international artists.",
             "isActive": false,
+            url: "./img/4.jpg"
         },
         {
             "id": "5",
             "title": "Cooking Class",
             "description": "A cooking class for beginners.",
             "isActive": false,
+            url: "./img/5.jpeg"
         },
         {
             "id": "6",
             "title": "Book Club Meeting",
             "description": "A book club meeting to discuss the latest read.",
             "isActive": false,
+            url: "./img/6.jpg"
         },
         {
             "id": "7",
             "title": "Photography Workshop",
             "description": "A photography workshop for beginners.",
             "isActive": false,
+            url: "./img/7.jpg"
         },
-        {
-            "id": "8",
-            "title": "Theater Performance",
-            "description": "A theater performance showcasing local talent.",
-            "isActive": false,
-        },
-        {
-            "id": "9",
-            "title": "Dance Workshop",
-            "description": "A dance workshop for beginners.",
-            "isActive": false,
-        },
-
 
 ]
