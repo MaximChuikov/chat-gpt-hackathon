@@ -14,7 +14,7 @@ class MemeController {
     getAllUncheckMeme(){
         console.log(MemeRepository.getAllMeme())
         console.log(MemeRepository.getAllMeme().filter(e => e.isLike === null))
-        return MemeRepository.getAllMeme().filter(e => e.isLike === null)
+        return MemeRepository.getAllMeme().filter(e => e.isLike == null)
     }
 
     getAllLikeMeme(){
