@@ -1,6 +1,8 @@
 import Activity from "../models/Activity";
 import ActivityRepository from "../repository/ActivityRepository";
 import User from "../models/User";
+import MemeRepository from "../repository/MemeRepository";
+import {memeMock} from "../data";
 
 class ActivityController {
 
@@ -48,8 +50,13 @@ class ActivityController {
         return ActivityRepository.getActivity(activityId)
     }
 
+    constructor() {
+        if(ActivityRepository.getAllActivity() !== null)
+            for (let i = 0;  i < activityMock.length; i++){
+                let t =this.createActivity(activityMock[i])
+            }
+    }
 
 }
-let check = true
 
 export default new ActivityController()

@@ -44,9 +44,9 @@ class UserController {
 
     constructor() {
 
-
-        if(!UserRepository.getAllUser()) {
-
+        console.log(false)
+        if(UserRepository.getAllUser() !== null) {
+            console.log(true)
             for (let i = 0; i < usersMock.length; i++) {
                 let t = this.createUser(usersMock[i])
             }

@@ -68,7 +68,7 @@ export let usersMock = [
         contact : "89999999999",
         mail : "Slava@mail.ru",
         description : "Тот кто мил и силен!",
-        url : "./img/Славян7.png",
+        url : "./img/Славян7.jpeg",
         gender : true,
         myActivity : new Map()
     },
