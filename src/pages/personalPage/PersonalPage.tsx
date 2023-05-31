@@ -1,13 +1,22 @@
 import React, {useState} from 'react';
 import styles from "./PersonalPage.module.scss";
 import Header from "@Components/Header/Header";
+import {Edit} from 'react-feather';
 import UserController from "../../backend/controller/UserController";
+import {useNavigate} from "react-router-dom";
 
 const UserPage = () => {
-    const [user, setUser] = useState(UserController.getMainUser())
+    const [user, setUser] = useState(UserController.getMainUser());
+    const nav = useNavigate();
+    const changeUser = () => {
+        nav("/aboutMe");
+    }
     return (
         <div className={styles.aboutMe}>
-            <Header text={"Профиль"}/>
+            <div>
+                <Header text={"Профиль"}/>
+                <Edit className={styles.editText} onClick={changeUser}/>
+            </div>
             <div className={styles.userPage}>
                 <div className={styles.avatar}>
                     <img src={user.avatar} alt={"avatar"}/>
