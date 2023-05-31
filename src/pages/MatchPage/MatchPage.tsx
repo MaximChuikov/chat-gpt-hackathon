@@ -9,6 +9,9 @@ import UserController from "../../backend/controller/UserController";
 
 const MatchPage = () => {
     const users = UserController.getAllUncheckUser()
+
+    console.log(users)
+
     const nav = useNavigate();
     const openLikedPage = () => {
         nav("/liked")

@@ -11,7 +11,7 @@ const MemePage = () => {
     const users = MemeController.getAllUncheckMeme()
     const nav = useNavigate();
     const openLikedPage = () => {
-        nav("/liked")
+        nav("/likedMemes")
     }
     return (
         <>

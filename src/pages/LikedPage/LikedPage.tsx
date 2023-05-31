@@ -23,7 +23,6 @@ const LikedPage = () => {
                     <ArrowLeft className={styles.back} onClick={goBack}/>
                     <span className={styles.headerText}>Твои матчи</span>
                 </div>
-
             </div>
             <div className={styles.matches}>
                 {users.length > 0 ?

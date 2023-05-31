@@ -9,6 +9,8 @@ import LikedPage from "@Pages/LikedPage/LikedPage";
 import EventsPage from "@Pages/eventsPage/EventsPage";
 import SelectedEvents from "@Pages/SelectedEvents/SelectedEvents";
 import MemePage from "@Pages/MemePage/MemePage";
+import LikedMemes from "@Pages/LikedMemes/LikedMemes";
+import NewEvent from "@Pages/NewEvent/NewEvent";
 
 const App = () => {
     const nav = useNavigate();
@@ -29,7 +31,9 @@ const App = () => {
                 <Route path="/profile" element={<PersonalPage/>}/>
             </Route>
             <Route path="/liked" element={<LikedPage/>}/>
+            <Route path="/likedMemes" element={<LikedMemes/>}/>
             <Route path="/selected" element={<SelectedEvents/>}/>
+            <Route path="/newEvent" element={<NewEvent/>}/>
             <Route path="*" element={<MemePage/>}/>
         </Routes>
     );

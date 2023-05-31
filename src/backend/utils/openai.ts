@@ -1,4 +1,4 @@
-import {Configuration, OpenAIApi, CreateChatCompletionRequest, ChatCompletionRequestMessage} from "openai"
+import {Configuration, OpenAIApi, ChatCompletionRequestMessage} from "openai"
 import {Config} from '../../../config'
 
 
@@ -7,19 +7,28 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+const contextGenerateActivity = `Ты бот который отправляет в ответ только json файл на русском языке. Ты можешь предложить как провести вечер, где прогуляться в Нижнем Новгорое, как провести время с друзьями,
+чем заняться в умном кампусе в Нижнем Новгороде, что почитать и другое. Ты придумываешь зоголовок и описание мероприятия
+отправь json файл, который содержит title и description. Всегда отвечай {"title": ... , "description": ...}. Не приветствуй пользователя, и не отвечай ему`
+
+
 const messages: ChatCompletionRequestMessage[] = [
     {
         role: "system",
-        content: "asdas"
+        content: contextGenerateActivity
+    },
+    {
+        role: "user",
+        content: "Создай json объект"
     }
 ]
 
-async function createMessage(context: ChatCompletionRequestMessage[]) {
+export async function createMessage(context: ChatCompletionRequestMessage[]) {
     const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [...messages, ...context],
-        max_tokens: 200,
-        temperature: 0.4
+        max_tokens: 350,
+        temperature: 0.9
     });
     const newContext = [
         ...context, completion.data.choices[0]
@@ -31,19 +40,6 @@ async function createMessage(context: ChatCompletionRequestMessage[]) {
     }
 }
 
-const contextGenerateActivity = "Ты бот который должен будет сгенерировать мероприятие в виде json файла \n" +
-    "вот пример\n" +
-    "{\n" +
-    "            \"id\": \"7\",\n" +
-    "            \"title\": \"Photography Workshop\",\n" +
-    "            \"description\": \"A photography workshop for beginners.\",\n" +
-    "            \"isActive\": false,\n" +
-    "            url: \"./img/7.jpg\",\n" +
-    "            createDate : \"31. 05. ср\"\n" +
-    "        },\n" +
-    "поле createDate и url оставь таким же везде\n" +
-    "isActive везде true\n" +
-    "а остальное ты должен будешь сгенерировать сам, по тегам которые тебе отправят"
 
 
 
