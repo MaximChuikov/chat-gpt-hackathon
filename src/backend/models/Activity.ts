@@ -3,11 +3,11 @@ import User from "./User";
 export default interface Activity {
     id: string
     title : string
-    organizers : User
+    organizers? : User
     description : string
     isActive : boolean
     isLike? : boolean
-    users : Map<string,User>
+    users? : Map<string,User>
 }
 
 const test = {

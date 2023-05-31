@@ -1,4 +1,5 @@
 import UserController from "./controller/UserController";
+import Activity from "./models/Activity";
 
 
 export let usersMock = [
@@ -109,3 +110,63 @@ export const memeMock = [
 
 ]
 
+
+export const activityMock : Array<Activity> = [
+
+        {
+            "id": "1",
+            "title": "Charity Run for Children",
+            "description": "A charity run to raise funds for children in need.",
+            "isActive": false,
+        },
+        {
+            "id": "2",
+            "title": "Yoga in the Park",
+            "description": "A relaxing yoga session in the park.",
+            "isActive": false,
+        },
+        {
+            "id": "3",
+            "title": "Art Exhibition Opening",
+            "description": "An art exhibition opening featuring works by local artists.",
+            "isActive": false,
+        },
+        {
+            "id": "4",
+            "title": "Music Festival",
+            "description": "A music festival featuring local and international artists.",
+            "isActive": false,
+        },
+        {
+            "id": "5",
+            "title": "Cooking Class",
+            "description": "A cooking class for beginners.",
+            "isActive": false,
+        },
+        {
+            "id": "6",
+            "title": "Book Club Meeting",
+            "description": "A book club meeting to discuss the latest read.",
+            "isActive": false,
+        },
+        {
+            "id": "7",
+            "title": "Photography Workshop",
+            "description": "A photography workshop for beginners.",
+            "isActive": false,
+        },
+        {
+            "id": "8",
+            "title": "Theater Performance",
+            "description": "A theater performance showcasing local talent.",
+            "isActive": false,
+        },
+        {
+            "id": "9",
+            "title": "Dance Workshop",
+            "description": "A dance workshop for beginners.",
+            "isActive": false,
+        },
+
+
+]

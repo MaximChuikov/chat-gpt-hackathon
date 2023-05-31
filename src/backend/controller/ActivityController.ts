@@ -2,7 +2,7 @@ import Activity from "../models/Activity";
 import ActivityRepository from "../repository/ActivityRepository";
 import User from "../models/User";
 import MemeRepository from "../repository/MemeRepository";
-import {memeMock} from "../data";
+import {activityMock, memeMock} from "../data";
 
 class ActivityController {
 
