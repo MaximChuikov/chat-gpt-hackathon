@@ -44,11 +44,7 @@ const AboutMe = () => {
                 setIsError(true);
             }
         } else if (curState === 2) {
-            if (gender) {
-                setCurState(state);
-            } else {
-                setIsError(true);
-            }
+            setCurState(state);
         } else if (curState === 3) {
             if (interests.length > 0) {
                 setCurState(state);
