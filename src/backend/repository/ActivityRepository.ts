@@ -7,7 +7,8 @@ class ActivityRepository {
 
     saveActivity(activity : Activity){
         const storage = StorageRep.getStorage<Activity>("activity") as Map<string,Activity>
-        storage.set(activity.id, activity)
+        // @ts-ignore
+        storage[activity.id] = activity
         StorageRep.saveStorage<Map<string,Activity>>("activity",storage)
     }
 
