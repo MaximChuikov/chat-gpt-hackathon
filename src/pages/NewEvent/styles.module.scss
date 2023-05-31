@@ -1,4 +1,3 @@
-
 // Colors
 $greenSeaweed: #696eff;
 $blueQueen: rgba(#8788ff, 1);
@@ -6,7 +5,6 @@ $redFire: rgba(244, 91, 105, 1);
 
 .login {
   font-family: "Asap", sans-serif;
-
   overflow: hidden;
   background-color: white;
   padding: 40px 30px 30px 30px;
@@ -18,7 +16,10 @@ $redFire: rgba(244, 91, 105, 1);
   transform: translate(-50%, -50%);
   transition: transform 300ms, box-shadow 300ms;
   box-shadow: 5px 10px 10px rgba($greenSeaweed, 0.2);
-
+  @media screen and (max-width: 420px){
+    width: auto;
+    padding: 10px
+  }
   .ai {
     position: absolute;
     top: 5px;
@@ -46,7 +47,7 @@ $redFire: rgba(244, 91, 105, 1);
       opacity: 0.5;
       position: absolute;
       top: -2px;
-      transition: 0.5s cubic-bezier(.5,-0.5,.5,1.5);
+      transition: 0.5s cubic-bezier(.5, -0.5, .5, 1.5);
     }
 
     &:hover svg {
@@ -139,7 +140,6 @@ $color2: #3197EE;
   margin: 0.5rem;
 
 
-
   input[type="radio"] {
     position: absolute;
     opacity: 0;
@@ -205,6 +205,7 @@ $color2: #3197EE;
 .buttonsContainer {
   display: flex;
   justify-content: space-between;
+
   > button {
     cursor: pointer;
     color: #fff;
@@ -223,6 +224,7 @@ $color2: #3197EE;
       background-color: darken($redFire, 5%);
     }
   }
+
   :nth-child(1) {
     background-color: green;
 
@@ -235,7 +237,7 @@ $color2: #3197EE;
 .loaderContainer {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   z-index: 2;
 }
@@ -255,6 +257,7 @@ $color2: #3197EE;
   box-sizing: border-box;
   animation: rotation 2s linear infinite;
 }
+
 .loader::after {
   content: '';
   box-sizing: border-box;
@@ -281,6 +284,7 @@ $color2: #3197EE;
     transform: rotate(360deg);
   }
 }
+
 @keyframes rotationBack {
   0% {
     transform: rotate(0deg);
