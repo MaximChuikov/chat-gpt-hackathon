@@ -141,7 +141,8 @@
     }
   }
 }
-.alertBlock{
+
+.alertBlock {
   font-family: Inter, sans-serif;
   bottom: 16px;
   right: 12px;
@@ -149,7 +150,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .alert{
+
+  .alert {
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -159,15 +161,22 @@
     padding: 8px 12px;
     position: relative;
     width: 320px;
-    .error{
+
+    .error {
       font-size: 24px;
       color: white;
       line-height: 32px;
     }
-    .icon{
+
+    .icon {
       color: white;
       width: 50px;
       height: 50px;
     }
   }
+}
+
+.alertBlockHide {
+  transition: all 0.5s ease-out;
+  display: none;
 }

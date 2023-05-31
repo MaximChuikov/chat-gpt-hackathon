@@ -2,7 +2,7 @@ import React, {useMemo, useRef, useState} from 'react'
 import TinderCard from 'react-tinder-card'
 import {Check, X} from "react-feather";
 
-function Swiper({swipeModels, onSwipe, emptyText}) {
+function Swiper({swipeModels, onSwipe, emptyText, isVisible = true}) {
 
     const [currentIndex, setCurrentIndex] = useState(swipeModels.length - 1)
     const [lastDirection, setLastDirection] = useState();
@@ -67,7 +67,7 @@ function Swiper({swipeModels, onSwipe, emptyText}) {
                 }
             </div>
             {
-                currentUSer && currentUSer.description ? (
+                isVisible ? (
                     <div className={"description"}>
                         <div className={"panel"}>
                             <span>{currentUSer ? currentUSer.description : emptyText}</span>
