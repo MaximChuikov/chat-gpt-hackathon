@@ -25,7 +25,7 @@ export async function createMessage(context: ChatCompletionRequestMessage[]) {
         model: "gpt-3.5-turbo",
         messages: [...messages, ...context],
         max_tokens: 350,
-        temperature: 1
+        temperature: 0.9
     });
     const newContext = [
         ...context, completion.data.choices[0]
