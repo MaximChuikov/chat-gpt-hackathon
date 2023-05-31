@@ -22,7 +22,7 @@ const UserPage = () => {
                     </div>
                 </div>
                 <div className={styles.sliderContainer}>
-                    <img className={styles.memeImg} src={"/img/ящер.jpg"}/>
+                    <img className={styles.memeImg} src={"/img/ящер.jpg"} alt={"/img/ящер.jpg"}/>
                     <img className={styles.memeImg} src={"/img/славянка1.jpg"}/>
                     <img className={styles.memeImg} src={"/img/славянка2.jpeg"}/>
                     <img className={styles.memeImg} src={"/img/ящер.jpg"}/>
