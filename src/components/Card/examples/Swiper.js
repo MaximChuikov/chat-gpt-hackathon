@@ -59,7 +59,7 @@ function Swiper({swipeModels, onSwipe, emptyText}) {
                                 className='card'
                             >
                                 <X className={"icons close"} onClick={() => swipe("left")}/>
-                                <h3>{u.name}</h3>
+                                <h3>{u.name?u.name:u.title}</h3>
                                 <Check className={"icons accept"} onClick={() => swipe("right")}/>
                             </div>
                         </TinderCard>
