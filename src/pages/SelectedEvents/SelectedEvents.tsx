@@ -23,7 +23,6 @@ const SelectedEvents = () => {
                     <ArrowLeft className={styles.back} onClick={goBack}/>
                     <span className={styles.headerText}>Ближайшие события</span>
                 </div>
-
             </div>
             <div className={styles.matches}>
                 {activities.length > 0 ?
