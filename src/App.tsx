@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {Route, Routes, useNavigate} from 'react-router-dom';
 import styles from './App.module.scss';
-import NewEvent from "@Pages/NewEvent/NewEvent";
 import MatchPage from "@Pages/MatchPage/MatchPage";
 import Footer from "@Components/Footer/Footer";
 import AboutMe from "@Pages/aboutMe/AboutMe";
@@ -10,6 +9,7 @@ import UserController from "./backend/controller/UserController";
 import LikedPage from "@Pages/LikedPage/LikedPage";
 import EventsPage from "@Pages/eventsPage/EventsPage";
 import SelectedEvents from "@Pages/SelectedEvents/SelectedEvents";
+import MemePage from "@Pages/MemePage/MemePage";
 
 const App = () => {
     const nav = useNavigate();
@@ -32,7 +32,7 @@ const App = () => {
             </Route>
             <Route path="/liked" element={<LikedPage/>}/>
             <Route path="/selected" element={<SelectedEvents/>}/>
-            <Route path="*" element={<div className={styles.appBody}>error</div>}/>
+            <Route path="*" element={<MemePage/>}/>
         </Routes>
     );
 }
