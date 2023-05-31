@@ -12,15 +12,19 @@ const Footer = () => {
             <div className={styles.footer}>
                 <div onClick={() => nav('/')}>
                     <Search/>
+                    <p>Люди</p>
                 </div>
                 <div onClick={() => nav('/events')}>
                     <Award/>
+                    <p>События</p>
                 </div>
                 <div onClick={() => nav('/memes')}>
                     <Smile/>
+                    <p>Хехе</p>
                 </div>
                 <div onClick={() => nav('/profile')}>
                     <User/>
+                    <p>Моя</p>
                 </div>
             </div>
         </>

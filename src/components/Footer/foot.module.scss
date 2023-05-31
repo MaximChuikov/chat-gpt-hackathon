@@ -3,16 +3,27 @@
   bottom: 0;
   left: 0;
   width: 100vw;
-  background: #696EFF;
+  background: #c290e8;
   padding: 12px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+
+  p{
+    color: white;
+  }
 
   div {
     width: 40px;
     height: 40px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
+
+    :hover{
+
+    }
 
     svg {
       color: white;
