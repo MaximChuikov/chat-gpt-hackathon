@@ -1,5 +1,6 @@
 import StorageRep from "./StorageRep";
 import Meme from "../models/Meme";
+import {usersMock} from "../data";
 
 class MemeRepository{
     saveMeme(meme : Meme){
@@ -11,6 +12,9 @@ class MemeRepository{
     getAllMeme(){
         let map : Map<string,Meme> = new Map(Object.entries(JSON.parse(localStorage.getItem("meme") || "{}")));
         return Array.from(map, ([key,value]) => (value ));
+    }
+    constructor() {
+        //localStorage.setItem("meme",JSON.stringify(memesMock))
     }
 }
 

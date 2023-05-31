@@ -1,6 +1,7 @@
 import Activity from "../models/Activity";
 import StorageRep from "./StorageRep";
 import MessageHelper from "../models/MessageHelper";
+import {usersMock} from "../data";
 
 class ActivityRepository {
 
@@ -19,6 +20,10 @@ class ActivityRepository {
     getAllActivity() : Array<Activity>{
         let map : Map<string,Activity> = new Map(Object.entries(JSON.parse(localStorage.getItem("activity") || "{}")));
         return Array.from(map, ([key,value]) => (value ));
+    }
+
+    constructor() {
+      //  localStorage.setItem("activity",JSON.stringify(activityMock))
     }
 }
 export default new ActivityRepository()

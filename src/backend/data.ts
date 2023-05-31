@@ -89,13 +89,23 @@ export const memeMock = [
  {
     "id": "4",
         "title": "Когда делаешь что-то в последний момент",
-        "url": ""
+        "url": "./img/meme3.jpg"
 },
  {
     "id": "5",
         "title": "Когда пытаешься выглядеть профессионально",
-        "url": "https://i.imgur.com/MIlCt9X.jpg"
+        "url": "./img/meme4.jpg"
 },
+    {
+        "id": "6",
+        "title": "Distracted boyfriend",
+        "url": "./img/meme5.jpg"
+    },
+    {
+        "id": "7",
+        "title": "Change My Mind",
+        "url": "./img/meme6.jpg"
+    },
 
 ]
 
