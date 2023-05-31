@@ -1,7 +1,7 @@
 import React from "react";
 import styles from '../anotherPage.module.scss';
 import User from "../../backend/models/User";
-import {ArrowLeft, MessageCircle} from "react-feather";
+import {AlertTriangle, ArrowLeft, MessageCircle} from "react-feather";
 import UserController from "../../backend/controller/UserController";
 
 const LikedPage = () => {
@@ -29,6 +29,14 @@ const LikedPage = () => {
                 {users.length > 0 ?
                     users.map(user => getUserCard(user)) :
                     <div className={styles.errorMessage}>Здесь пока что пусто (((</div>}
+            </div>
+            <div className={styles.alertBlock}>
+                <div className={styles.alert}>
+                    <span className={styles.error}>
+                        Данная функция еще не реализована
+                    </span>
+                    <AlertTriangle className={styles.icon}/>
+                </div>
             </div>
         </div>
     )
