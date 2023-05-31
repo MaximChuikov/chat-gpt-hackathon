@@ -2,11 +2,13 @@ import User from "../models/User";
 import UserRepository from "../repository/UserRepository";
 import MainUser, {mainUser} from "../models/MainUser";
 import Meme from "../models/Meme";
+import {usersMock} from "../data";
 
 class UserController {
 
     createUser(user : User){
-        return UserRepository.saveUser(user)
+        console.log(user)
+        UserRepository.saveUser(user)
     }
 
     switchUser(user : User, check : boolean){
@@ -36,6 +38,12 @@ class UserController {
 
     getMainUser() : MainUser{
         return UserRepository.getMainUser()
+    }
+    constructor() {
+        for (let i = 0;  i < usersMock.length; i++){
+            let t =this.createUser(usersMock[i])
+            console.log(t)
+        }
     }
 }
 

@@ -9,10 +9,10 @@ class HelperMessageController {
     getAllHelpers() : Array<MessageHelper>{
         return HelperRepository.getAllHelpers()
     }
-    getAllActiveHelpers(){
+   /* getAllActiveHelpers(){
         const allHelpers = this.getAllHelpers() as Array<MessageHelper>
         return allHelpers.map(e => !e.isComplite)
-    }
+    }*/
 }
 
 export default new HelperMessageController()

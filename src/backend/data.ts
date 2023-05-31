@@ -1,4 +1,7 @@
-export const usersMock = [
+import UserController from "./controller/UserController";
+
+
+export let usersMock = [
     {
         id : "1",
         name : "Лена",
@@ -75,18 +78,18 @@ export const memeMock = [
     {
         id : "0",
         title : "Woman yelling at a cat",
-        url : "",
+        url : "./img/meme1.jpeg",
     },
     {
     "id": "1",
         "title": "Когда понимаешь, что завтра понедельник",
-        "url": "https://i.imgur.com/plft5XR.jpg"
+        "url": "./img/meme2.jpg"
 },
 
  {
     "id": "4",
         "title": "Когда делаешь что-то в последний момент",
-        "url": "https://i.imgur.com/DL7xdOb.jpg"
+        "url": ""
 },
  {
     "id": "5",
@@ -95,3 +98,4 @@ export const memeMock = [
 },
 
 ]
+
