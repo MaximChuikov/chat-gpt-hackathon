@@ -17,7 +17,9 @@ class UserController {
     }
 
     getAllUncheckUser(){
-        return UserRepository.getAllUser().filter(e => e.isLike === null)
+        console.log(UserRepository.getAllUser())
+        console.log(UserRepository.getAllUser().filter(e => e.isLike == null))
+        return UserRepository.getAllUser().filter(e => e.isLike == null)
     }
 
     getAllLikeUser(){
