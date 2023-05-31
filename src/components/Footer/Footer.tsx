@@ -10,19 +10,19 @@ const Footer = () => {
         <>
             <Outlet/>
             <div className={styles.footer}>
-                <div onClick={() => nav('/')}>
+                <div onClick={() => nav('/')} className={styles.element}>
                     <Search/>
                     <p>Люди</p>
                 </div>
-                <div onClick={() => nav('/events')}>
+                <div onClick={() => nav('/events')} className={styles.element}>
                     <Award/>
                     <p>События</p>
                 </div>
-                <div onClick={() => nav('/memes')}>
+                <div onClick={() => nav('/memes')} className={styles.element}>
                     <Smile/>
                     <p>Хехе</p>
                 </div>
-                <div onClick={() => nav('/profile')}>
+                <div onClick={() => nav('/profile')} className={styles.element}>
                     <User/>
                     <p>Моя</p>
                 </div>

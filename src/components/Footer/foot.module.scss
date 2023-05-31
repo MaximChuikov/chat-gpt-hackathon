@@ -13,7 +13,14 @@
   p{
     color: white;
   }
-
+  .element:hover{
+    svg{
+      color: #d1d3d1;
+    }
+    p{
+      color: #d1d3d1;
+    }
+  }
   div {
     width: 40px;
     height: 40px;
@@ -22,11 +29,6 @@
     gap: 5px;
     align-items: center;
     cursor: pointer;
-
-
-    :hover{
-      color: #d1d3d1;
-    }
 
     svg {
       color: white;
