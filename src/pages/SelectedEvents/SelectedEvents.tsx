@@ -1,12 +1,13 @@
 import React from "react"
 import styles from "@Pages/anotherPage.module.scss";
-import {ArrowLeft} from "react-feather";
+import {ArrowLeft, Plus} from "react-feather";
 import Activity from "../../backend/models/Activity";
 import ActivityController from "../../backend/controller/ActivityController";
+import {useNavigate} from "react-router-dom";
 
 const SelectedEvents = () => {
     const activities = ActivityController.getAllLikeActivity();
-
+    const nav = useNavigate();
     const getActivityCard = (activity: Activity) => {
         return (<div className={styles.activityCard}>
             <div key={activity.id} className={styles.userCard}>
@@ -34,7 +35,7 @@ const SelectedEvents = () => {
         }
     }
     const goBack = () => {
-        window.history.back()
+        window.history.back();
     }
     return (
         <div className={styles.likedPage}>
@@ -42,6 +43,9 @@ const SelectedEvents = () => {
                 <div className={styles.header}>
                     <ArrowLeft className={styles.back} onClick={goBack}/>
                     <span className={styles.headerText}>Ближайшие события</span>
+                    <Plus className={`${styles.back} ${styles.plus}`}  onClick={()=>{
+                        nav("/newEvent");
+                    }}/>
                 </div>
             </div>
             <div className={styles.matches}>
