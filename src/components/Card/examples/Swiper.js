@@ -59,18 +59,22 @@ function Swiper({swipeModels, onSwipe, emptyText}) {
                                 className='card'
                             >
                                 <X className={"icons close"} onClick={() => swipe("left")}/>
-                                <h3>{u.name?u.name:u.title}</h3>
+                                <h3>{u.name ? u.name : u.title}</h3>
                                 <Check className={"icons accept"} onClick={() => swipe("right")}/>
                             </div>
                         </TinderCard>
                     ))
                 }
             </div>
-            <div className={"description"}>
-                <div className={"panel"}>
-                    <span>{currentUSer ? currentUSer.description : emptyText}</span>
-                </div>
-            </div>
+            {
+                currentUSer && currentUSer.description ? (
+                    <div className={"description"}>
+                        <div className={"panel"}>
+                            <span>{currentUSer ? currentUSer.description : emptyText}</span>
+                        </div>
+                    </div>
+                ) : ""
+            }
         </div>
     )
 }

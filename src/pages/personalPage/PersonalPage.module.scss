@@ -8,14 +8,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto;
+    padding: 24px 16px 72px 16px;
 
-    .textBlock{
-      margin-top: 10px;
-      color: #000000;
+    .textBlock {
+      margin-top: 12px;
       display: flex;
 
-      .name{
+      .name {
+        font-family: "Montserrat", sans-serif;
         font-size: 24px;
         color: #000000;
       }
@@ -45,34 +45,36 @@
 
 }
 
+.descriptionBlock {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 24px;
 
-.descriptionBlock{
-  margin-top: 15px;
-  font-size: 20px;
-
-  .about{
+  .about {
     text-align: center;
   }
+
   .description {
-    margin-top: 10px;
-    text-align: center;
-    padding: 0 10px 0 10px;
-    margin-bottom: 30px;
+    border-radius: 8px;
+    padding: 16px;
+    background: #EAEAEA;
+    margin-top: 12px;
   }
-
 }
 
-.downloadBlock{
-  margin-bottom: 120px;
-}
-
-
-.sliderContainer{
+.sliderContainer {
+  max-height: 104px;
+  width: 100%;
+  margin-top: 24px;
   display: flex;
   flex-wrap: nowrap;
   overflow: auto;
+  gap: 18px;
 
-  div{
+  .memeImg {
+    border: 2px solid #EAEAEA;
+    min-width: 100px;
     border-radius: 50%;
     overflow: hidden;
     width: 100px;

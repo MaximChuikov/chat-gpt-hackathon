@@ -30,7 +30,7 @@ const AboutMe = () => {
             description: interests,
             memes: [],
             urls: [],
-            avatar: "/image/nad9.jpg",
+            avatar: "/img/nad9.jpg",
         }
 
         UserController.createMainUser(user);

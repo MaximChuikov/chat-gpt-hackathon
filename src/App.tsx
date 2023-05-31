@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {Route, Routes, useNavigate} from 'react-router-dom';
-import styles from './App.module.scss';
 import MatchPage from "@Pages/MatchPage/MatchPage";
 import Footer from "@Components/Footer/Footer";
 import AboutMe from "@Pages/aboutMe/AboutMe";
@@ -15,7 +14,6 @@ const App = () => {
     const nav = useNavigate();
 
     useEffect(() => {
-
         const user = UserController.getMainUser();
         if (!user.name) {
             nav("/aboutMe");
