@@ -118,49 +118,56 @@ export const activityMock : Array<Activity> = [
             "title": "Charity Run for Children",
             "description": "A charity run to raise funds for children in need.",
             "isActive": false,
-            url: "./img/1.jpg"
+            url: "./img/1.jpg",
+            createDate : "31. 05. ср"
         },
         {
             "id": "2",
             "title": "Yoga in the Park",
             "description": "A relaxing yoga session in the park.",
             "isActive": false,
-            url: "./img/2.jpg"
+            url: "./img/2.jpg",
+            createDate : "31. 05. ср"
         },
         {
             "id": "3",
             "title": "Art Exhibition Opening",
             "description": "An art exhibition opening featuring works by local artists.",
             "isActive": false,
-            url: "./img/3.jpg"
+            url: "./img/3.jpg",
+            createDate : "31. 05. ср"
         },
         {
             "id": "4",
             "title": "Music Festival",
             "description": "A music festival featuring local and international artists.",
             "isActive": false,
-            url: "./img/4.jpg"
+            url: "./img/4.jpg",
+            createDate : "31. 05. ср"
         },
         {
             "id": "5",
             "title": "Cooking Class",
             "description": "A cooking class for beginners.",
             "isActive": false,
-            url: "./img/5.jpeg"
+            url: "./img/5.jpeg",
+            createDate : "31. 05. ср"
         },
         {
             "id": "6",
             "title": "Book Club Meeting",
             "description": "A book club meeting to discuss the latest read.",
             "isActive": false,
-            url: "./img/6.jpg"
+            url: "./img/6.jpg",
+            createDate : "31. 05. ср"
         },
         {
             "id": "7",
             "title": "Photography Workshop",
             "description": "A photography workshop for beginners.",
             "isActive": false,
-            url: "./img/7.jpg"
+            url: "./img/7.jpg",
+            createDate : "31. 05. ср"
         },
 
 ]

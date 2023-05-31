@@ -9,6 +9,7 @@ export default interface Activity {
     url : string
     isLike? : boolean
     users? : Map<string,User>
+    createDate : string
 }
 
 const test = {
