@@ -50,6 +50,7 @@ class UserController {
             for (let i = 0; i < usersMock.length; i++) {
                 let t = this.createUser(usersMock[i])
             }
+            console.log(UserRepository.getAllUser())
         }
     }
 

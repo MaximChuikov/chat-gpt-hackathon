@@ -5,7 +5,8 @@ import {usersMock} from "../data";
 class MemeRepository{
     saveMeme(meme : Meme){
         const storage = StorageRep.getStorage<Meme>("meme") as Map<string,Meme>
-        storage.set(meme.id, meme)
+        // @ts-ignore
+        storage[meme.id] = meme
         StorageRep.saveStorage<Map<string,Meme>>("meme",storage)
     }
 

@@ -15,11 +15,11 @@ const App = () => {
     const nav = useNavigate();
 
     useEffect(() => {
+
         const user = UserController.getMainUser();
         if (!user.name) {
             nav("/aboutMe");
         }
-        localStorage.clear()
     }, [])
     return (
         <Routes>

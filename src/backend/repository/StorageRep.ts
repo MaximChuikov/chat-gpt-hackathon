@@ -11,8 +11,8 @@ class StorageRep {
     }
 
     saveStorage<T>(name : string, storage : T) {
-
         localStorage.setItem(name.toString(),JSON.stringify(storage))
+        console.log(JSON.parse(localStorage.getItem(name.toString()) || "{}") as Map<string,T>)
         return JSON.parse(localStorage.getItem(name.toString()) || "{}") as Map<string,T>
     }
 }

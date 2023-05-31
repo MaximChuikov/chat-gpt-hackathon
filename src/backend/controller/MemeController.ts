@@ -26,10 +26,11 @@ class MemeController {
     }
 
     constructor() {
-        if(MemeRepository.getAllMeme() !== null)
-            for (let i = 0;  i < memeMock.length; i++){
-                let t =this.createMeme(memeMock[i])
+        if(MemeRepository.getAllMeme() !== null) {
+            for (let i = 0; i < memeMock.length; i++) {
+                let t = this.createMeme(memeMock[i])
             }
+        }
     }
 
 }

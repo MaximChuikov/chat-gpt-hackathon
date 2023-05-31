@@ -18,6 +18,9 @@ class ActivityController {
 
     addAndDeleteUserInActivity(activityId : string, userAdd : User){
         let activity = ActivityRepository.getActivity(activityId)
+
+        if(activity.users == null)
+            activity.users = new Map<string,User>()
         // @ts-ignore
         if(activity.users[userAdd.id]){
             activity.users.delete(userAdd.id)
@@ -51,10 +54,12 @@ class ActivityController {
     }
 
     constructor() {
-        if(ActivityRepository.getAllActivity() !== null)
-            for (let i = 0;  i < activityMock.length; i++){
-                let t =this.createActivity(activityMock[i])
+        if(ActivityRepository.getAllActivity() !== null) {
+
+            for (let i = 0; i < activityMock.length; i++) {
+                let t = this.createActivity(activityMock[i])
             }
+        }
     }
 
 }

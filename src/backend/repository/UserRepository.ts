@@ -16,6 +16,7 @@ class UserRepository {
 
     getAllUser() : Array<User>{
         let map : Map<string,User> = new Map(Object.entries(JSON.parse(localStorage.getItem("user") || "{}")));
+        console.log(Array.from(map, ([key,value]) => (value )))
         return Array.from(map, ([key,value]) => (value ));
     }
 
