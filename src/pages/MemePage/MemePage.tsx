@@ -11,7 +11,7 @@ const MemePage = () => {
     const users = MemeController.getAllUncheckMeme()
     const nav = useNavigate();
     const openLikedPage = () => {
-        nav("/likedMemes")
+        nav("/liked");
     }
     return (
         <>
@@ -20,7 +20,7 @@ const MemePage = () => {
                 <BarChart className={`${styles.icon} ${styles.top}`} onClick={openLikedPage}/>
             </div>
             <div className={styles.cardContainer}>
-                <Swiper swipeModels={users} onSwipe={MemeController.switchMeme} emptyText={"Мемов больше нет("}/>
+                <Swiper isVisible={false} swipeModels={users} onSwipe={MemeController.switchMeme} emptyText={"Мемов больше нет("}/>
             </div>
         </>
 

@@ -3,10 +3,17 @@
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+  display: flex;
+  gap: 15px;
+
+  img{
+    height: 30px;
+    width: 30px;
+  }
 
   .headerText {
     color: white;
-    font-family: Inter, sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
