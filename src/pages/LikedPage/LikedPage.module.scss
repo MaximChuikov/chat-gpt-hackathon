@@ -1,0 +1,72 @@
+.back{
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+.header {
+  align-items: center;
+  display: flex;
+  background: #696EFF;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+
+  .headerText {
+    margin-left: 12px;
+    color: white;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+}
+.likedPage {
+  width: 100%;
+  height: 100vh;
+
+  .matches {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .errorMessage {
+    font-size: 24px;
+    line-height: 32px;
+    width: 100%;
+    margin-top: 32px;
+  }
+  .userCard:not(:first-child) {
+     margin-top: 24px;
+  }
+  .userCard{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    background: #EAEAEA;
+    color: black;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+
+    .userImage{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid black;
+    }
+    .userText{
+      font-family: Inter, sans-serif;
+      margin-left: 16px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .chat{
+      position: absolute;
+      right: 16px;
+    }
+  }
+}

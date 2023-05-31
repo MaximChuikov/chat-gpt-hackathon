@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-  min-height: calc(100vh - 72px);
+  min-height: calc(100vh - 136px);
   overflow: hidden;
   background: linear-gradient(45deg, #ff8a00, #e52e71),
   linear-gradient(135deg, #652c90, #2d98da);
@@ -16,6 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 }
 .heartImg{
