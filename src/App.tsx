@@ -27,7 +27,7 @@ const App = () => {
             <Route element={<Footer/>}>
                 <Route path="/" element={<MatchPage/>}/>
                 <Route path="/events" element={<EventsPage/>}/>
-                <Route path="/memes" element={<div className={styles.appBody}>error</div>}/>
+                <Route path="/memes" element={<MemePage/>}/>
                 <Route path="/profile" element={<PersonalPage/>}/>
             </Route>
             <Route path="/liked" element={<LikedPage/>}/>
