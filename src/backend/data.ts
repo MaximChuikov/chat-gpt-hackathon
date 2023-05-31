@@ -84,7 +84,7 @@ export const memeMock = [
     {
     "id": "1",
         "title": "Когда понимаешь, что завтра понедельник",
-        "url": "./img/meme2.jpg"
+        "url": "./img/meme2.jpeg"
 },
 
  {
@@ -105,7 +105,7 @@ export const memeMock = [
     {
         "id": "7",
         "title": "Change My Mind",
-        "url": "./img/meme6.jpg"
+        "url": "./img/meme6.png"
     },
 
 ]

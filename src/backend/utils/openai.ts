@@ -31,7 +31,19 @@ async function createMessage(context: ChatCompletionRequestMessage[]) {
     }
 }
 
-
+const contextGenerateActivity = "Ты бот который должен будет сгенерировать мероприятие в виде json файла \n" +
+    "вот пример\n" +
+    "{\n" +
+    "            \"id\": \"7\",\n" +
+    "            \"title\": \"Photography Workshop\",\n" +
+    "            \"description\": \"A photography workshop for beginners.\",\n" +
+    "            \"isActive\": false,\n" +
+    "            url: \"./img/7.jpg\",\n" +
+    "            createDate : \"31. 05. ср\"\n" +
+    "        },\n" +
+    "поле createDate и url оставь таким же везде\n" +
+    "isActive везде true\n" +
+    "а остальное ты должен будешь сгенерировать сам, по тегам которые тебе отправят"
 
 
 
