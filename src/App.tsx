@@ -7,6 +7,7 @@ import Footer from "@Components/Footer/Footer";
 import AboutMe from "@Pages/aboutMe/AboutMe";
 import PersonalPage from "@Pages/personalPage/PersonalPage";
 import UserController from "./backend/controller/UserController";
+import LikedPage from "@Pages/LikedPage/LikedPage";
 
 const App = () => {
     const nav = useNavigate();
@@ -24,8 +25,9 @@ const App = () => {
                 <Route path="/events" element={<NewEvent/>}/>
                 <Route path="/memes" element={<div className={styles.appBody}>error</div>}/>
                 <Route path="/profile" element={<PersonalPage/>}/>
-                <Route path="*" element={<div className={styles.appBody}>error</div>}/>
             </Route>
+            <Route path="/liked" element={<LikedPage/>}/>
+            <Route path="*" element={<div className={styles.appBody}>error</div>}/>
         </Routes>
     );
 }

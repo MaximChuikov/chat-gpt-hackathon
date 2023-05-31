@@ -32,6 +32,7 @@ h2 {
 }
 
 .cardContainer {
+  position: relative;
   width: 90vw;
   max-width: 260px;
   height: 300px;
@@ -62,7 +63,9 @@ h2 {
   position: absolute;
   bottom: 0;
   margin: 10px;
+  font-size: 18px;
   color: #fff;
+  font-family: Inter, sans-serif;
 }
 
 .infoText {
@@ -115,6 +118,32 @@ h2 {
   font-weight: bolder;
   width: 160px;
   box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
+}
+.card-view{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.description{
+  overflow: hidden;
+  height: 40%;
+  margin-top: 32px;
+  box-sizing: border-box;
+  padding: 16px;
+  width: 100%;
+}
+.panel{
+  flex: 1 0 auto;
+  border-radius: 8px;
+  width: 100%;
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  background: #696EFF;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .buttons button:hover {
