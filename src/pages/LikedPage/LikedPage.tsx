@@ -3,9 +3,11 @@ import styles from './LikedPage.module.scss';
 import Header from "@Components/Header/Header";
 import User from "../../backend/models/User";
 import {ArrowLeft, MessageCircle} from "react-feather";
+import UserController from "../../backend/controller/UserController";
+import {useNavigate} from "react-router-dom";
 
 const LikedPage = () => {
-    const users = []
+    const users = UserController.getAllLikeUser();
     const getUserCard = (user: User) => {
         return (<div key={user.id} className={styles.userCard}>
             <img src={user.url} alt={"person"} className={styles.userImage}/>
@@ -13,11 +15,14 @@ const LikedPage = () => {
             <MessageCircle className={styles.chat}/>
         </div>);
     }
+    const goBack = () => {
+        window.history.back()
+    }
     return (
         <div className={styles.likedPage}>
             <div>
                 <div className={styles.header}>
-                    <ArrowLeft className={styles.back}/>
+                    <ArrowLeft className={styles.back} onClick={goBack}/>
                     <span className={styles.headerText}>Твои матчи</span>
                 </div>
 
