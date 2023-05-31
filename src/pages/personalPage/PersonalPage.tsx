@@ -6,7 +6,7 @@ import Header from "@Components/Header/Header";
 const UserPage = () => {
     return (
         <div className={styles.aboutMe}>
-            <Header text={"Начальная анкета"}/>
+            <Header text={"Страничка пользователя"}/>
                 <div className={styles.userPage}>
                     <div className={styles.avatar}>
                         <img src={"/img/nad9.jpg"}/>
@@ -22,7 +22,13 @@ const UserPage = () => {
                     </div>
                     <div className={styles.downloadBlock}>
                         <div className={styles.imgBlock}>
-                            { "Здесь можно добавить блоки для картинок "}
+                            <div className={styles.sliderContainer}>
+                                <div className="slide"><img src="/img/nad9.jpg"/></div>
+                                <div className="slide"><img src="/img/richard.jpg"/></div>
+                                <div className="slide"><img src="/img/jared.jpg"/></div>
+                                <div className="slide"><img src="/img/event.png"/></div>
+                                <div className="slide"><img src="/img/monica.jpg"/></div>
+                            </div>
                         </div>
                         <div className={styles.memeBlock}>
                             { "Здесь можно добавить блоки для мемов"}

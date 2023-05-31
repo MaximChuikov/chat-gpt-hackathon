@@ -2,7 +2,6 @@
 .aboutMe {
   width: 100%;
   height: 100vh;
-  display: flex;
   flex-direction: column;
 
   .userPage {
@@ -68,3 +67,15 @@
 }
 
 
+.sliderContainer{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+
+  div{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -3,12 +3,14 @@ import StorageRep from "./StorageRep";
 import Activity from "../models/Activity";
 import Meme from "../models/Meme";
 import MainUser from "../models/MainUser";
+import {usersMock} from "../data";
 
 class UserRepository {
 
     saveUser(user : User){
         const storage = StorageRep.getStorage<User>("user") as Map<string,User>
-        storage.set(user.id, user)
+        // @ts-ignore
+        storage[user.id] = user
         StorageRep.saveStorage<Map<string,User>>("user",storage)
     }
 
@@ -30,6 +32,10 @@ class UserRepository {
 
     getMainUser(){
         return JSON.parse(localStorage.getItem("mainUser") || "{}") as MainUser
+    }
+
+    constructor() {
+        localStorage.setItem("user",JSON.stringify(usersMock))
     }
 }
 

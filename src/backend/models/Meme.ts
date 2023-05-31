@@ -6,3 +6,4 @@ export default interface Meme{
     url : string
 
 }
+
