@@ -1,20 +1,17 @@
 import React, {useMemo, useRef, useState} from 'react'
 import TinderCard from 'react-tinder-card'
 import {Check, X} from "react-feather";
-import UserController from "../../../backend/controller/UserController";
 
-const users = UserController.getAllUncheckUser()
+function Swiper({swipeModels, onSwipe, emptyText}) {
 
-function Users() {
-
-    const [currentIndex, setCurrentIndex] = useState(users.length - 1)
+    const [currentIndex, setCurrentIndex] = useState(swipeModels.length - 1)
     const [lastDirection, setLastDirection] = useState();
-    const currentUSer = users[currentIndex];
+    const currentUSer = swipeModels[currentIndex];
     const currentIndexRef = useRef(currentIndex)
 
     const childRefs = useMemo(
         () =>
-            Array(users.length)
+            Array(swipeModels.length)
                 .fill(0)
                 .map((i) => React.createRef()),
         []
@@ -30,10 +27,10 @@ function Users() {
         updateCurrentIndex(index - 1)
         if (direction === 'right') {
             console.log("вправо")
-            UserController.switchUser(users[index], true)
+            onSwipe(swipeModels[index], true)
         } else {
             console.log("влево")
-            UserController.switchUser(users[index], false)
+            onSwipe(swipeModels[index], false)
         }
     }
 
@@ -41,7 +38,7 @@ function Users() {
         currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
     }
     const swipe = async (dir) => {
-        if (currentIndex < users.length) {
+        if (currentIndex < swipeModels.length) {
             await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
         }
     }
@@ -49,7 +46,7 @@ function Users() {
         <div>
             <div className='cardContainer'>
                 {
-                    users.map((u, index) => (
+                    swipeModels.map((u, index) => (
                         <TinderCard
                             ref={childRefs[index]}
                             className='swipe'
@@ -71,11 +68,11 @@ function Users() {
             </div>
             <div className={"description"}>
                 <div className={"panel"}>
-                    <span>{currentUSer ? currentUSer.description : "Пар больше нет("}</span>
+                    <span>{currentUSer ? currentUSer.description : emptyText}</span>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Users
+export default Swiper

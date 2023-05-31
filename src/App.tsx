@@ -8,6 +8,8 @@ import AboutMe from "@Pages/aboutMe/AboutMe";
 import PersonalPage from "@Pages/personalPage/PersonalPage";
 import UserController from "./backend/controller/UserController";
 import LikedPage from "@Pages/LikedPage/LikedPage";
+import EventsPage from "@Pages/eventsPage/EventsPage";
+import SelectedEvents from "@Pages/SelectedEvents/SelectedEvents";
 
 const App = () => {
     const nav = useNavigate();
@@ -24,11 +26,12 @@ const App = () => {
             <Route path="/aboutMe" element={<AboutMe/>}/>
             <Route element={<Footer/>}>
                 <Route path="/" element={<MatchPage/>}/>
-                <Route path="/events" element={<NewEvent/>}/>
+                <Route path="/events" element={<EventsPage/>}/>
                 <Route path="/memes" element={<div className={styles.appBody}>error</div>}/>
                 <Route path="/profile" element={<PersonalPage/>}/>
             </Route>
             <Route path="/liked" element={<LikedPage/>}/>
+            <Route path="/selected" element={<SelectedEvents/>}/>
             <Route path="*" element={<div className={styles.appBody}>error</div>}/>
         </Routes>
     );
