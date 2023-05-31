@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './LikedPage.module.scss';
+import styles from '../anotherPage.module.scss';
 import User from "../../backend/models/User";
 import {ArrowLeft, MessageCircle} from "react-feather";
 import UserController from "../../backend/controller/UserController";
