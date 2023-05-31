@@ -38,15 +38,15 @@ class ActivityController {
     }
 
     getAllUncheckActivity(){
-        return ActivityRepository.getAllActivity().filter(e => e.isLike === null)
+        return ActivityRepository.getAllActivity().filter(e => e.isLike == null)
     }
 
     getAllLikeActivity(){
-        return ActivityRepository.getAllActivity().filter(e => e.isLike === true)
+        return ActivityRepository.getAllActivity().filter(e => e.isLike == true)
     }
 
     getAllUnlikeActivity(){
-        return ActivityRepository.getAllActivity().filter(e => e.isLike === false)
+        return ActivityRepository.getAllActivity().filter(e => e.isLike == false)
     }
 
     getActivityById(activityId : string){
@@ -59,6 +59,7 @@ class ActivityController {
             for (let i = 0; i < activityMock.length; i++) {
                 let t = this.createActivity(activityMock[i])
             }
+            console.log(ActivityRepository.getAllActivity())
         }
     }
 

@@ -17,17 +17,15 @@ class UserController {
     }
 
     getAllUncheckUser(){
-        console.log(UserRepository.getAllUser())
-        console.log(UserRepository.getAllUser().filter(e => e.isLike == null))
         return UserRepository.getAllUser().filter(e => e.isLike == null)
     }
 
     getAllLikeUser(){
-        return UserRepository.getAllUser().filter(e => e.isLike === true)
+        return UserRepository.getAllUser().filter(e => e.isLike == true)
     }
 
     getAllUnlikeUser() {
-        return  UserRepository.getAllUser().filter(e => e.isLike === false)
+        return  UserRepository.getAllUser().filter(e => e.isLike == false)
     }
 
     getUserById(userId : string){
