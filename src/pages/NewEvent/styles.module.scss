@@ -14,7 +14,7 @@ $redFire: rgba(244, 91, 105, 1);
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
+  max-width: 400px;
   transform: translate(-50%, -50%);
   transition: transform 300ms, box-shadow 300ms;
   box-shadow: 5px 10px 10px rgba($greenSeaweed, 0.2);

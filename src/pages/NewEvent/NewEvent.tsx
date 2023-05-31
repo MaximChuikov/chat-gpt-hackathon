@@ -3,6 +3,7 @@ import styles from "./styles.module.scss"
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {createMessage} from "../../backend/utils/openai";
 import ActivityController from "../../backend/controller/ActivityController";
+import UserController from "../../backend/controller/UserController";
 
 export interface User {
     name: string
@@ -20,12 +21,14 @@ const AboutMe = () => {
 
     const [loader, setLoader] = useState(false)
 
+
+
     return (
         <div>
             {
                 loader ? (
                     <div className={styles.loaderContainer}>
-                        <span className={styles.loader}></span>
+                        <span className={styles.loader} />
                     </div>
                 ) : ""
             }
@@ -36,7 +39,7 @@ const AboutMe = () => {
                 // @ts-ignore
                 const desc = e.target[1].value;
                 // @ts-ignore
-                const gender = e.target[2].checked ? e.target[2].value : e.target[3].value;
+                const gender = e.target[2].checked ? e.target[2].value : e.target[3].value || e.target[4].value;
                 // @ts-ignore
                 const date = e.target[4].value;
 
@@ -53,7 +56,10 @@ const AboutMe = () => {
             }}>
                 <button type={"button"} className={styles.ai} onClick={async (e) => {
                     setLoader(true)
-                    await createMessage([]).then(r => {
+                    await createMessage([{
+                        role: "user",
+                        content: UserController.getMainUser().description
+                    }]).then(r => {
                         console.log(r)
                         if (r.reply) {
                             const data = JSON.parse(r.reply.content) as { title: string, description: string }
