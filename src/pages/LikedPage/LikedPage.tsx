@@ -1,10 +1,8 @@
 import React from "react";
 import styles from './LikedPage.module.scss';
-import Header from "@Components/Header/Header";
 import User from "../../backend/models/User";
 import {ArrowLeft, MessageCircle} from "react-feather";
 import UserController from "../../backend/controller/UserController";
-import {useNavigate} from "react-router-dom";
 
 const LikedPage = () => {
     const users = UserController.getAllLikeUser();

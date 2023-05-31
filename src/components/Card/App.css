@@ -39,8 +39,8 @@ h2 {
 }
 
 .card {
+  background-color: black;
   position: relative;
-  background-color: #fff;
   width: 80vw;
   max-width: 260px;
   height: 300px;
@@ -125,6 +125,7 @@ h2 {
   width: 100%;
 }
 .description{
+  position: relative;
   overflow: hidden;
   height: 40%;
   margin-top: 32px;
@@ -132,8 +133,23 @@ h2 {
   padding: 16px;
   width: 100%;
 }
+.icons{
+  bottom: 4px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+.close{
+  color: red;
+  left: 8px;
+}
+.accept{
+  color:green;
+  right: 8px;
+}
 .panel{
   flex: 1 0 auto;
+  position: relative;
   border-radius: 8px;
   width: 100%;
   font-family: Inter, sans-serif;

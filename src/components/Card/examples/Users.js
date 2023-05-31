@@ -1,6 +1,6 @@
 import React, {useMemo, useRef, useState} from 'react'
 import TinderCard from 'react-tinder-card'
-
+import {Check, X} from "react-feather";
 import UserController from "../../../backend/controller/UserController";
 
 const users = UserController.getAllUncheckUser()
@@ -40,7 +40,11 @@ function Users() {
     const outOfFrame = (name, idx) => {
         currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
     }
-
+    const swipe = async (dir) => {
+        if (currentIndex < users.length) {
+            await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
+        }
+    }
     return (
         <div>
             <div className='cardContainer'>
@@ -57,7 +61,9 @@ function Users() {
                                 style={{backgroundImage: 'url(' + u.url + ')'}}
                                 className='card'
                             >
+                                <X className={"icons close"} onClick={() => swipe("left")}/>
                                 <h3>{u.name}</h3>
+                                <Check className={"icons accept"} onClick={() => swipe("right")}/>
                             </div>
                         </TinderCard>
                     ))
