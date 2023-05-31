@@ -3,7 +3,7 @@ import {Config} from '../../../config'
 
 
 const configuration = new Configuration({
-    apiKey: Config.OPENAI_API_KEY,
+    apiKey: Config.KEY,
 });
 const openai = new OpenAIApi(configuration);
 
